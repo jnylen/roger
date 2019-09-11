@@ -10,6 +10,8 @@ otp_release:
   - 20.3
   - 21.0
   - 22.0
+before_script:
+  - sleep 15
 script: MIX_ENV=test mix compile && MIX_ENV=test mix test && integration_test/run
 after_script:
   - mix deps.get --only docs
